@@ -1,0 +1,33 @@
+<button class="return-button" routerLink="">Voltar</button>
+<div class="shopping-list-container" [style.background-color]="shoppingList.color[0]">
+    <mat-toolbar [style.background-color]="shoppingList.color[0]">
+       <span>{{shoppingList.title}}</span>
+       <span class="example-spacer"></span>
+       
+       <button class="list-menu-button" [style.background-color]="shoppingList.color[0]" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+       </button>
+
+       <mat-menu #menu="matMenu">
+           <button mat-menu-item mat-button [matMenuTriggerFor]="colorList">Mudar cor</button>
+           <mat-menu #colorList="matMenu">
+            <button mat-menu-item style="background-color: rgb(255, 255, 255)" mat-menu-item (click)="changeColor('rgb(255, 255, 255)', 'branco')">Branco</button>
+            <button mat-menu-item style="background-color: rgb(184, 197, 197)" mat-menu-item (click)="changeColor('rgb(184, 197, 197)', 'cinza')">Cinza</button>
+            <button mat-menu-item style="background-color: rgb(52, 48, 102)" mat-menu-item (click)="changeColor('rgb(52, 48, 102)', 'azul')">Azul</button>
+            <button mat-menu-item style="background-color: rgb(44, 129, 63)" mat-menu-item (click)="changeColor('rgb(44, 129, 63)', 'verde')">Verde</button>
+            <button mat-menu-item style="background-color: rgb(224, 208, 62)" mat-menu-item (click)="changeColor('rgb(224, 208, 62)', 'amarelo')">Amarelo</button>
+            <button mat-menu-item style="background-color: rgb(158, 109, 45)" mat-menu-item (click)="changeColor('rgb(158, 109, 45)', 'laranja')">Laranja</button>
+            <button mat-menu-item style="background-color: rgb(88, 28, 28)" mat-menu-item (click)="changeColor('rgb(88, 28, 28)', 'vinho')">Vinho</button>
+           </mat-menu> 
+
+           <button mat-menu-item (click)="deleteList(shoppingList.id)">Deletar lista</button>
+       </mat-menu>
+     </mat-toolbar>     
+    
+    <mat-accordion>
+        <app-shopping-item *ngFor="let item of shoppingList.items" [shoppingItem]="item"></app-shopping-item>
+    </mat-accordion>      
+
+    <app-shopping-item-form requestType="post"></app-shopping-item-form>
+    
+</div>

@@ -1,0 +1,24 @@
+.return-button{
+    position: absolute;
+    width: 80px;
+    top: 60px;
+    margin-left: 380px;
+}
+
+.shopping-list-container
+{
+    position: absolute;
+    box-sizing: content-box;
+    width: 50%;
+    min-height: 70%;
+    max-height: 92%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.list-menu-button
+{
+    width: 7%;
+    margin: 87%;
+    border: 0;
+}

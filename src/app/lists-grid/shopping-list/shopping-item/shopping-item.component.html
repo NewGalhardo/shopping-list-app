@@ -1,0 +1,29 @@
+<mat-expansion-panel class="list-item" [style.background-color]="shoppingItem.color">
+    <mat-expansion-panel-header>
+      <mat-panel-title [ngClass]="{ isChecked : shoppingItem.isChecked }">
+        <mat-checkbox [checked]="shoppingItem.isChecked" (change)="ChangeStatus()"
+          [checked]="shoppingItem.isChecked"
+          (change)="ChangeStatus()"
+          (click)="$event.stopPropagation()">
+          {{shoppingItem.title | titlecase}}
+        </mat-checkbox>        
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+        <li>Quantidade: {{shoppingItem.quantity | number}}</li>
+        <li>Preço unitário: {{shoppingItem.unitPrice | brCurrency}}</li>
+        <li>Informações adicionais: {{shoppingItem.additionalInfo}}</li>
+    </ul>
+  </mat-expansion-panel>
+  <!-- <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel> -->

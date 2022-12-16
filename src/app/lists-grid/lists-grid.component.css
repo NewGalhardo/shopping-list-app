@@ -1,0 +1,11 @@
+mat-grid-list{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+mat-grid-tile{
+    background-color: rgb(121, 58, 146);
+    font-size: 40px;
+    font-weight: bold;
+}

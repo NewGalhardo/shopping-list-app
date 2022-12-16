@@ -1,0 +1,20 @@
+<mat-accordion class="create-item-container">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Adicionar item
+        </mat-panel-title>            
+      </mat-expansion-panel-header>
+      
+      <form *ngIf="shoppingItemForm" [formGroup]="shoppingItemForm" (ngSubmit)="onSubmitForm()">
+        <mat-form-field class="item-input"><input matInput type="text" formControlName="title" placeholder="Título do item..."></mat-form-field>
+    
+        <mat-form-field class="item-input"><input matInput type="text" formControlName="quantity" placeholder="Quantidade (opcional)..."></mat-form-field>
+        <mat-form-field class="item-input"><input matInput type="text" formControlName="unitPrice" placeholder="Valor unitário (opcional)..."></mat-form-field>
+        <mat-form-field class="item-input"><input matInput type="text" formControlName="additionalInfo" placeholder="Informações adicionais (opcional)..."></mat-form-field>
+    
+        <button mat-stroked-button class="item-submit-button" type="submit">Adicionar</button>
+    </form>
+
+    </mat-expansion-panel>
+</mat-accordion>

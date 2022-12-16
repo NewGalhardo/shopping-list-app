@@ -1,0 +1,12 @@
+mat-expansion-panel, mat-panel-title
+{
+    height: 60px;
+    background-color: rgb(67, 124, 126);
+    color: white;
+    font-size: 38px;
+}
+
+.expand-menu-icon
+{
+    width: 10px;
+}

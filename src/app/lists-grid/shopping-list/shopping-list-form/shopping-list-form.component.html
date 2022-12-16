@@ -1,0 +1,20 @@
+<mat-accordion class="create-list-container">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Adicionar item
+        </mat-panel-title>            
+      </mat-expansion-panel-header>
+      
+      <form *ngIf="shoppingListForm" [formGroup]="shoppingListForm" (ngSubmit)="onSubmitForm()">
+        
+        <mat-form-field class="list-input">
+          <mat-label>Qual será o título da lista?</mat-label>
+          <input matInput type="text" formControlName="title" placeholder="Exemplo: 'Feira da semana">
+        </mat-form-field>
+    
+        <button mat-stroked-button class="list-submit-button" type="submit">Adicionar</button>
+    </form>
+
+    </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,4 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let list of lists" [routerLink]="'/list/' + list.id" [style.background-color]="list.color[0]">{{list.title}}</mat-grid-tile>
+    <mat-grid-tile routerLink="/list/create">Adicionar nova lista</mat-grid-tile>
+  </mat-grid-list>
